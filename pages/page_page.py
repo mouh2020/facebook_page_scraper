@@ -4,8 +4,15 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup
 
 class Page:
-    pass
-
+    
+    def page_title(self,) :
+        try : 
+            title = self.driver.title
+            if title :
+                return title.replace(' | Facebook','') 
+        except Exception as e : 
+            self.driver.save_screenshot('screenshots/page_title.png')
+        
 
 
 
